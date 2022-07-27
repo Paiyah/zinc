@@ -528,13 +528,12 @@ case 'proses':
     if (!m.quoted.sender) return m.reply('reply customer yang ingin di done kan!!')
   if(!isAdmins) return m.reply('maaf kamu bukan admin')
 m.reply(`
-[ *PESANAN TELAH DI PROSES* ]
+『 𝑷𝒆𝒔𝒂𝒏𝒂𝒏 𝑻𝒆𝒍𝒂𝒉 𝑫𝒊 𝑷𝒓𝒐𝒔𝒆𝒔 』
 
-STATUS     :  Menunggu Pesanan Di Proses
-WAKTU      :  ${wib}
-TANGGAL    :  ${tanggalCuy}
+🕰 𝑾𝒂𝒌𝒕𝒖       :  _${wib}_
+📆 𝑻𝒂𝒏𝒈𝒈𝒂𝒍     :  _${tanggalCuy}_
 
-*_Mohon Menunggu Ya Kak, Terimakasih :)_*
+𝑴𝒐𝒉𝒐𝒏 𝑴𝒆𝒏𝒖𝒏𝒈𝒈𝒖 𝒚𝒂, 𝑻𝒆𝒓𝒊𝒎𝒂𝒌𝒂𝒔𝒊𝒉
 `)
 ichi.sendMessage(global.Rowner, { text: `
 *PESANAN MASUK!!*
@@ -549,15 +548,16 @@ date: ${tanggalCuy}\n\n\n
 case 'done':
 case 'd':
   if (!m.quoted.sender) return m.reply('reply customer yang ingin di done kan!!')
+    if(!isAdmins) return m.reply('maaf kamu bukan admin')
   m.reply(`
-[ *PESANAN TELAH BERHASIL* ]
+『 𝑷𝒆𝒔𝒂𝒏𝒂𝒏 𝑻𝒆𝒍𝒂𝒉 𝑩𝒆𝒓𝒉𝒂𝒔𝒊𝒍 』
 
-STATUS     :  Sukses, Silahkan Di Cek
-WAKTU      :  ${wib}
-TANGGAL    :  ${tanggalCuy}
-PESANAN    :  ${m.quoted.text}
+🕰 𝑾𝒂𝒌𝒕𝒖     :  _${wib}_
+📆 𝑻𝒂𝒏𝒈𝒈𝒂𝒍   :  _${tanggalCuy}_
 
-*_Terima Kasih @${m.quoted.sender.split('@')[0]} Di Tunggu Orderan Selanjutnya :)_* `)
+📝 𝑷𝒆𝒔𝒂𝒏𝒂𝒏   :  _${m.quoted.text}_
+
+𝑻𝒆𝒓𝒊𝒎𝒂𝒌𝒂𝒔𝒊𝒉 @${m.quoted.sender.split('@')[0]} 𝑫𝒊 𝑻𝒖𝒏𝒈𝒈𝒖 𝑶𝒓𝒅𝒆𝒓𝒂𝒏 𝑺𝒆𝒍𝒂𝒏𝒋𝒖𝒕𝒏𝒚𝒂 `)
 break
 case 'database': case 'user': case 'jumlahdatabase': case 'jumlahdb': {
   var totalreg = Object.keys(global.db.users).length
